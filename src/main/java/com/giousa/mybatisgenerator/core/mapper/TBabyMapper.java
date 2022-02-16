@@ -2,6 +2,7 @@ package com.giousa.mybatisgenerator.core.mapper;
 
 import com.giousa.mybatisgenerator.core.model.TBaby;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface TBabyMapper {
@@ -11,7 +12,7 @@ public interface TBabyMapper {
 
     int insertSelective(TBaby record);
 
-    TBaby selectByPrimaryKey(Integer id);
+    TBaby selectByPrimaryKey(@Param("id") Integer id);
 
     int updateByPrimaryKeySelective(TBaby record);
 

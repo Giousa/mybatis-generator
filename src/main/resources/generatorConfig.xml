@@ -36,7 +36,7 @@
         <javaModelGenerator targetPackage="com.giousa.mybatisgenerator.core.model" targetProject="src/main/java" />
 
         <!-- 实体包对应映射文件位置及名称，默认存放在src目录下 -->
-        <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources/mybatis" />
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources/mybatis" />
         <!--生成Dao类存放位置-->
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.giousa.mybatisgenerator.core.mapper" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>

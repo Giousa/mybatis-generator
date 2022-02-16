@@ -1,6 +1,8 @@
 package com.giousa.mybatisgenerator.web.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.giousa.mybatisgenerator.MybatisGeneratorApplication;
+import com.giousa.mybatisgenerator.core.model.TBaby;
 import com.giousa.mybatisgenerator.web.request.IdReq;
 import com.giousa.mybatisgenerator.web.request.TBodyReq;
 import org.junit.jupiter.api.Test;
@@ -30,6 +32,7 @@ class TBabyControllerTest {
     @Test
     void update() {
         TBodyReq tBodyReq = new TBodyReq();
+        tBodyReq.setId(2);
         tBodyReq.setName("不笑猫-test-修改");
         tBodyReq.setSex((short) 2);
         tBodyReq.setBStatus(0);
@@ -40,6 +43,7 @@ class TBabyControllerTest {
     void selectByPrimaryKey() {
         IdReq idReq = new IdReq();
         idReq.setId(1);
-        controller.selectByPrimaryKey(idReq);
+        TBaby tBaby = controller.selectByPrimaryKey(idReq);
+        System.out.println(JSON.toJSONString(tBaby));
     }
 }

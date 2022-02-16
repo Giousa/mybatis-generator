@@ -35,7 +35,7 @@ public class TBabyController {
     }
 
     @PostMapping("selectByPrimaryKey")
-    public Object selectByPrimaryKey(@RequestBody IdReq idReq) {
+    public TBaby selectByPrimaryKey(@RequestBody IdReq idReq) {
         return tBabyMapper.selectByPrimaryKey(idReq.getId());
     }
 }

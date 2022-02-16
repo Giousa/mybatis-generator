@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.giousa.mybatisgenerator.core.mapper.TBabyMapper">
+  <resultMap id="BaseResultMap" type="com.giousa.mybatisgenerator.core.model.TBaby">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="area_id" jdbcType="INTEGER" property="areaId" />
+    <result column="h_id" jdbcType="INTEGER" property="hId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="SMALLINT" property="sex" />
+    <result column="birth" jdbcType="NVARCHAR" property="birth" />
+    <result column="isEchocardiography" jdbcType="SMALLINT" property="isechocardiography" />
+    <result column="number" jdbcType="NCHAR" property="number" />
+    <result column="mother" jdbcType="VARCHAR" property="mother" />
+    <result column="card_type" jdbcType="SMALLINT" property="cardType" />
+    <result column="ma_idcart" jdbcType="VARCHAR" property="maIdcart" />
+    <result column="nation" jdbcType="VARCHAR" property="nation" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="address1" jdbcType="VARCHAR" property="address1" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="guardian" jdbcType="SMALLINT" property="guardian" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="guardian_t" jdbcType="SMALLINT" property="guardianT" />
+    <result column="mobile_t" jdbcType="VARCHAR" property="mobileT" />
+    <result column="tel_t" jdbcType="VARCHAR" property="telT" />
+    <result column="guardian_s" jdbcType="SMALLINT" property="guardianS" />
+    <result column="mobile_s" jdbcType="VARCHAR" property="mobileS" />
+    <result column="tel_s" jdbcType="VARCHAR" property="telS" />
+    <result column="mode" jdbcType="SMALLINT" property="mode" />
+    <result column="createDate" jdbcType="VARCHAR" property="createdate" />
+    <result column="updateDate" jdbcType="VARCHAR" property="updatedate" />
+    <result column="operator_id" jdbcType="INTEGER" property="operatorId" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="agree" jdbcType="SMALLINT" property="agree" />
+    <result column="step" jdbcType="SMALLINT" property="step" />
+    <result column="jscode" jdbcType="VARCHAR" property="jscode" />
+    <result column="jsimg" jdbcType="VARCHAR" property="jsimg" />
+    <result column="additional" jdbcType="SMALLINT" property="additional" />
+    <result column="followup" jdbcType="INTEGER" property="followup" />
+    <result column="followupResult" jdbcType="INTEGER" property="followupresult" />
+    <result column="deleteDate" jdbcType="VARCHAR" property="deletedate" />
+    <result column="createUser" jdbcType="VARCHAR" property="createuser" />
+    <result column="updateUser" jdbcType="VARCHAR" property="updateuser" />
+    <result column="deleteUser" jdbcType="VARCHAR" property="deleteuser" />
+    <result column="screen_id" jdbcType="INTEGER" property="screenId" />
+    <result column="diagnosis_id" jdbcType="INTEGER" property="diagnosisId" />
+    <result column="treat_id" jdbcType="INTEGER" property="treatId" />
+    <result column="dr" jdbcType="INTEGER" property="dr" />
+    <result column="b_status" jdbcType="INTEGER" property="bStatus" />
+    <result column="issupplement" jdbcType="VARCHAR" property="issupplement" />
+    <result column="problem" jdbcType="SMALLINT" property="problem" />
+    <result column="isInterface" jdbcType="SMALLINT" property="isinterface" />
+    <result column="interFaceId" jdbcType="INTEGER" property="interfaceid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, area_id, h_id, name, sex, birth, isEchocardiography, number, mother, card_type, 
+    ma_idcart, nation, city, address1, address, guardian, mobile, tel, guardian_t, mobile_t, 
+    tel_t, guardian_s, mobile_s, tel_s, mode, createDate, updateDate, operator_id, status, 
+    agree, step, jscode, jsimg, additional, followup, followupResult, deleteDate, createUser, 
+    updateUser, deleteUser, screen_id, diagnosis_id, treat_id, dr, b_status, issupplement, 
+    problem, isInterface, interFaceId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_baby
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_baby
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.giousa.mybatisgenerator.core.model.TBaby">
+    insert into t_baby (area_id, h_id,
+      name, sex, birth,
+      isEchocardiography, number, mother,
+      card_type, ma_idcart, nation,
+      city, address1, address,
+      guardian, mobile, tel,
+      guardian_t, mobile_t, tel_t,
+      guardian_s, mobile_s, tel_s,
+      mode, createDate, updateDate,
+      operator_id, status, agree,
+      step, jscode, jsimg,
+      additional, followup, followupResult,
+      deleteDate, createUser, updateUser,
+      deleteUser, screen_id, diagnosis_id,
+      treat_id, dr, b_status,
+      issupplement, problem, isInterface,
+      interFaceId)
+    values (#{areaId,jdbcType=INTEGER}, #{hId,jdbcType=INTEGER},
+      #{name,jdbcType=VARCHAR}, #{sex,jdbcType=SMALLINT}, #{birth,jdbcType=NVARCHAR},
+      #{isechocardiography,jdbcType=SMALLINT}, #{number,jdbcType=NCHAR}, #{mother,jdbcType=VARCHAR},
+      #{cardType,jdbcType=SMALLINT}, #{maIdcart,jdbcType=VARCHAR}, #{nation,jdbcType=VARCHAR},
+      #{city,jdbcType=VARCHAR}, #{address1,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
+      #{guardian,jdbcType=SMALLINT}, #{mobile,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR},
+      #{guardianT,jdbcType=SMALLINT}, #{mobileT,jdbcType=VARCHAR}, #{telT,jdbcType=VARCHAR},
+      #{guardianS,jdbcType=SMALLINT}, #{mobileS,jdbcType=VARCHAR}, #{telS,jdbcType=VARCHAR},
+      #{mode,jdbcType=SMALLINT}, #{createdate,jdbcType=VARCHAR}, #{updatedate,jdbcType=VARCHAR},
+      #{operatorId,jdbcType=INTEGER}, #{status,jdbcType=SMALLINT}, #{agree,jdbcType=SMALLINT},
+      #{step,jdbcType=SMALLINT}, #{jscode,jdbcType=VARCHAR}, #{jsimg,jdbcType=VARCHAR},
+      #{additional,jdbcType=SMALLINT}, #{followup,jdbcType=INTEGER}, #{followupresult,jdbcType=INTEGER},
+      #{deletedate,jdbcType=VARCHAR}, #{createuser,jdbcType=VARCHAR}, #{updateuser,jdbcType=VARCHAR},
+      #{deleteuser,jdbcType=VARCHAR}, #{screenId,jdbcType=INTEGER}, #{diagnosisId,jdbcType=INTEGER},
+      #{treatId,jdbcType=INTEGER}, #{dr,jdbcType=INTEGER}, #{bStatus,jdbcType=INTEGER},
+      #{issupplement,jdbcType=VARCHAR}, #{problem,jdbcType=SMALLINT}, #{isinterface,jdbcType=SMALLINT},
+      #{interfaceid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.giousa.mybatisgenerator.core.model.TBaby">
+    insert into t_baby
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="areaId != null">
+        area_id,
+      </if>
+      <if test="hId != null">
+        h_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="birth != null">
+        birth,
+      </if>
+      <if test="isechocardiography != null">
+        isEchocardiography,
+      </if>
+      <if test="number != null">
+        number,
+      </if>
+      <if test="mother != null">
+        mother,
+      </if>
+      <if test="cardType != null">
+        card_type,
+      </if>
+      <if test="maIdcart != null">
+        ma_idcart,
+      </if>
+      <if test="nation != null">
+        nation,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="address1 != null">
+        address1,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="guardian != null">
+        guardian,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+      <if test="guardianT != null">
+        guardian_t,
+      </if>
+      <if test="mobileT != null">
+        mobile_t,
+      </if>
+      <if test="telT != null">
+        tel_t,
+      </if>
+      <if test="guardianS != null">
+        guardian_s,
+      </if>
+      <if test="mobileS != null">
+        mobile_s,
+      </if>
+      <if test="telS != null">
+        tel_s,
+      </if>
+      <if test="mode != null">
+        mode,
+      </if>
+      <if test="createdate != null">
+        createDate,
+      </if>
+      <if test="updatedate != null">
+        updateDate,
+      </if>
+      <if test="operatorId != null">
+        operator_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="agree != null">
+        agree,
+      </if>
+      <if test="step != null">
+        step,
+      </if>
+      <if test="jscode != null">
+        jscode,
+      </if>
+      <if test="jsimg != null">
+        jsimg,
+      </if>
+      <if test="additional != null">
+        additional,
+      </if>
+      <if test="followup != null">
+        followup,
+      </if>
+      <if test="followupresult != null">
+        followupResult,
+      </if>
+      <if test="deletedate != null">
+        deleteDate,
+      </if>
+      <if test="createuser != null">
+        createUser,
+      </if>
+      <if test="updateuser != null">
+        updateUser,
+      </if>
+      <if test="deleteuser != null">
+        deleteUser,
+      </if>
+      <if test="screenId != null">
+        screen_id,
+      </if>
+      <if test="diagnosisId != null">
+        diagnosis_id,
+      </if>
+      <if test="treatId != null">
+        treat_id,
+      </if>
+      <if test="dr != null">
+        dr,
+      </if>
+      <if test="bStatus != null">
+        b_status,
+      </if>
+      <if test="issupplement != null">
+        issupplement,
+      </if>
+      <if test="problem != null">
+        problem,
+      </if>
+      <if test="isinterface != null">
+        isInterface,
+      </if>
+      <if test="interfaceid != null">
+        interFaceId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null">
+        #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="hId != null">
+        #{hId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=SMALLINT},
+      </if>
+      <if test="birth != null">
+        #{birth,jdbcType=NVARCHAR},
+      </if>
+      <if test="isechocardiography != null">
+        #{isechocardiography,jdbcType=SMALLINT},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=NCHAR},
+      </if>
+      <if test="mother != null">
+        #{mother,jdbcType=VARCHAR},
+      </if>
+      <if test="cardType != null">
+        #{cardType,jdbcType=SMALLINT},
+      </if>
+      <if test="maIdcart != null">
+        #{maIdcart,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="address1 != null">
+        #{address1,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="guardian != null">
+        #{guardian,jdbcType=SMALLINT},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="guardianT != null">
+        #{guardianT,jdbcType=SMALLINT},
+      </if>
+      <if test="mobileT != null">
+        #{mobileT,jdbcType=VARCHAR},
+      </if>
+      <if test="telT != null">
+        #{telT,jdbcType=VARCHAR},
+      </if>
+      <if test="guardianS != null">
+        #{guardianS,jdbcType=SMALLINT},
+      </if>
+      <if test="mobileS != null">
+        #{mobileS,jdbcType=VARCHAR},
+      </if>
+      <if test="telS != null">
+        #{telS,jdbcType=VARCHAR},
+      </if>
+      <if test="mode != null">
+        #{mode,jdbcType=SMALLINT},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedate != null">
+        #{updatedate,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="agree != null">
+        #{agree,jdbcType=SMALLINT},
+      </if>
+      <if test="step != null">
+        #{step,jdbcType=SMALLINT},
+      </if>
+      <if test="jscode != null">
+        #{jscode,jdbcType=VARCHAR},
+      </if>
+      <if test="jsimg != null">
+        #{jsimg,jdbcType=VARCHAR},
+      </if>
+      <if test="additional != null">
+        #{additional,jdbcType=SMALLINT},
+      </if>
+      <if test="followup != null">
+        #{followup,jdbcType=INTEGER},
+      </if>
+      <if test="followupresult != null">
+        #{followupresult,jdbcType=INTEGER},
+      </if>
+      <if test="deletedate != null">
+        #{deletedate,jdbcType=VARCHAR},
+      </if>
+      <if test="createuser != null">
+        #{createuser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateuser != null">
+        #{updateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteuser != null">
+        #{deleteuser,jdbcType=VARCHAR},
+      </if>
+      <if test="screenId != null">
+        #{screenId,jdbcType=INTEGER},
+      </if>
+      <if test="diagnosisId != null">
+        #{diagnosisId,jdbcType=INTEGER},
+      </if>
+      <if test="treatId != null">
+        #{treatId,jdbcType=INTEGER},
+      </if>
+      <if test="dr != null">
+        #{dr,jdbcType=INTEGER},
+      </if>
+      <if test="bStatus != null">
+        #{bStatus,jdbcType=INTEGER},
+      </if>
+      <if test="issupplement != null">
+        #{issupplement,jdbcType=VARCHAR},
+      </if>
+      <if test="problem != null">
+        #{problem,jdbcType=SMALLINT},
+      </if>
+      <if test="isinterface != null">
+        #{isinterface,jdbcType=SMALLINT},
+      </if>
+      <if test="interfaceid != null">
+        #{interfaceid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.giousa.mybatisgenerator.core.model.TBaby">
+    update t_baby
+    <set>
+      <if test="areaId != null">
+        area_id = #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="hId != null">
+        h_id = #{hId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=SMALLINT},
+      </if>
+      <if test="birth != null">
+        birth = #{birth,jdbcType=NVARCHAR},
+      </if>
+      <if test="isechocardiography != null">
+        isEchocardiography = #{isechocardiography,jdbcType=SMALLINT},
+      </if>
+      <if test="number != null">
+        number = #{number,jdbcType=NCHAR},
+      </if>
+      <if test="mother != null">
+        mother = #{mother,jdbcType=VARCHAR},
+      </if>
+      <if test="cardType != null">
+        card_type = #{cardType,jdbcType=SMALLINT},
+      </if>
+      <if test="maIdcart != null">
+        ma_idcart = #{maIdcart,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        nation = #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="address1 != null">
+        address1 = #{address1,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="guardian != null">
+        guardian = #{guardian,jdbcType=SMALLINT},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="guardianT != null">
+        guardian_t = #{guardianT,jdbcType=SMALLINT},
+      </if>
+      <if test="mobileT != null">
+        mobile_t = #{mobileT,jdbcType=VARCHAR},
+      </if>
+      <if test="telT != null">
+        tel_t = #{telT,jdbcType=VARCHAR},
+      </if>
+      <if test="guardianS != null">
+        guardian_s = #{guardianS,jdbcType=SMALLINT},
+      </if>
+      <if test="mobileS != null">
+        mobile_s = #{mobileS,jdbcType=VARCHAR},
+      </if>
+      <if test="telS != null">
+        tel_s = #{telS,jdbcType=VARCHAR},
+      </if>
+      <if test="mode != null">
+        mode = #{mode,jdbcType=SMALLINT},
+      </if>
+      <if test="createdate != null">
+        createDate = #{createdate,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedate != null">
+        updateDate = #{updatedate,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorId != null">
+        operator_id = #{operatorId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="agree != null">
+        agree = #{agree,jdbcType=SMALLINT},
+      </if>
+      <if test="step != null">
+        step = #{step,jdbcType=SMALLINT},
+      </if>
+      <if test="jscode != null">
+        jscode = #{jscode,jdbcType=VARCHAR},
+      </if>
+      <if test="jsimg != null">
+        jsimg = #{jsimg,jdbcType=VARCHAR},
+      </if>
+      <if test="additional != null">
+        additional = #{additional,jdbcType=SMALLINT},
+      </if>
+      <if test="followup != null">
+        followup = #{followup,jdbcType=INTEGER},
+      </if>
+      <if test="followupresult != null">
+        followupResult = #{followupresult,jdbcType=INTEGER},
+      </if>
+      <if test="deletedate != null">
+        deleteDate = #{deletedate,jdbcType=VARCHAR},
+      </if>
+      <if test="createuser != null">
+        createUser = #{createuser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateuser != null">
+        updateUser = #{updateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteuser != null">
+        deleteUser = #{deleteuser,jdbcType=VARCHAR},
+      </if>
+      <if test="screenId != null">
+        screen_id = #{screenId,jdbcType=INTEGER},
+      </if>
+      <if test="diagnosisId != null">
+        diagnosis_id = #{diagnosisId,jdbcType=INTEGER},
+      </if>
+      <if test="treatId != null">
+        treat_id = #{treatId,jdbcType=INTEGER},
+      </if>
+      <if test="dr != null">
+        dr = #{dr,jdbcType=INTEGER},
+      </if>
+      <if test="bStatus != null">
+        b_status = #{bStatus,jdbcType=INTEGER},
+      </if>
+      <if test="issupplement != null">
+        issupplement = #{issupplement,jdbcType=VARCHAR},
+      </if>
+      <if test="problem != null">
+        problem = #{problem,jdbcType=SMALLINT},
+      </if>
+      <if test="isinterface != null">
+        isInterface = #{isinterface,jdbcType=SMALLINT},
+      </if>
+      <if test="interfaceid != null">
+        interFaceId = #{interfaceid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.giousa.mybatisgenerator.core.model.TBaby">
+    update t_baby
+    set area_id = #{areaId,jdbcType=INTEGER},
+      h_id = #{hId,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=SMALLINT},
+      birth = #{birth,jdbcType=NVARCHAR},
+      isEchocardiography = #{isechocardiography,jdbcType=SMALLINT},
+      number = #{number,jdbcType=NCHAR},
+      mother = #{mother,jdbcType=VARCHAR},
+      card_type = #{cardType,jdbcType=SMALLINT},
+      ma_idcart = #{maIdcart,jdbcType=VARCHAR},
+      nation = #{nation,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      address1 = #{address1,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      guardian = #{guardian,jdbcType=SMALLINT},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      guardian_t = #{guardianT,jdbcType=SMALLINT},
+      mobile_t = #{mobileT,jdbcType=VARCHAR},
+      tel_t = #{telT,jdbcType=VARCHAR},
+      guardian_s = #{guardianS,jdbcType=SMALLINT},
+      mobile_s = #{mobileS,jdbcType=VARCHAR},
+      tel_s = #{telS,jdbcType=VARCHAR},
+      mode = #{mode,jdbcType=SMALLINT},
+      createDate = #{createdate,jdbcType=VARCHAR},
+      updateDate = #{updatedate,jdbcType=VARCHAR},
+      operator_id = #{operatorId,jdbcType=INTEGER},
+      status = #{status,jdbcType=SMALLINT},
+      agree = #{agree,jdbcType=SMALLINT},
+      step = #{step,jdbcType=SMALLINT},
+      jscode = #{jscode,jdbcType=VARCHAR},
+      jsimg = #{jsimg,jdbcType=VARCHAR},
+      additional = #{additional,jdbcType=SMALLINT},
+      followup = #{followup,jdbcType=INTEGER},
+      followupResult = #{followupresult,jdbcType=INTEGER},
+      deleteDate = #{deletedate,jdbcType=VARCHAR},
+      createUser = #{createuser,jdbcType=VARCHAR},
+      updateUser = #{updateuser,jdbcType=VARCHAR},
+      deleteUser = #{deleteuser,jdbcType=VARCHAR},
+      screen_id = #{screenId,jdbcType=INTEGER},
+      diagnosis_id = #{diagnosisId,jdbcType=INTEGER},
+      treat_id = #{treatId,jdbcType=INTEGER},
+      dr = #{dr,jdbcType=INTEGER},
+      b_status = #{bStatus,jdbcType=INTEGER},
+      issupplement = #{issupplement,jdbcType=VARCHAR},
+      problem = #{problem,jdbcType=SMALLINT},
+      isInterface = #{isinterface,jdbcType=SMALLINT},
+      interFaceId = #{interfaceid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>
